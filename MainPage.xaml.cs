@@ -26,5 +26,12 @@ namespace HelloUWP
         {
             this.InitializeComponent();
         }
+
+        private async void Button_Click(object sender, RoutedEventArgs e)
+        {
+            WeatherModel.RootObject myWeather = await WeatherModel.GetWeather(20.0, 20.0);
+
+            ResultTextBlock.Text = myWeather.name + " - " + myWeather.main.temp + " - " + myWeather.weather[0].description;
+        }
     }
 }

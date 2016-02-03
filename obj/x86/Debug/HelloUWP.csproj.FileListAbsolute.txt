@@ -115,7 +115,6 @@ C:\Users\Taylor Miley\documents\visual studio 2015\Projects\HelloUWP\HelloUWP\bi
 C:\Users\Taylor Miley\documents\visual studio 2015\Projects\HelloUWP\HelloUWP\bin\x86\Debug\System.Xml.XDocument.dll
 C:\Users\Taylor Miley\documents\visual studio 2015\Projects\HelloUWP\HelloUWP\bin\x86\Debug\System.Xml.XmlDocument.dll
 C:\Users\Taylor Miley\documents\visual studio 2015\Projects\HelloUWP\HelloUWP\bin\x86\Debug\System.Xml.XmlSerializer.dll
-C:\Users\Taylor Miley\documents\visual studio 2015\Projects\HelloUWP\HelloUWP\obj\x86\Debug\HelloUWP.csprojResolveAssemblyReference.cache
 C:\Users\Taylor Miley\documents\visual studio 2015\Projects\HelloUWP\HelloUWP\obj\x86\Debug\App.g.i.cs
 C:\Users\Taylor Miley\documents\visual studio 2015\Projects\HelloUWP\HelloUWP\obj\x86\Debug\App.g.cs
 C:\Users\Taylor Miley\documents\visual studio 2015\Projects\HelloUWP\HelloUWP\obj\x86\Debug\MainPage.g.i.cs

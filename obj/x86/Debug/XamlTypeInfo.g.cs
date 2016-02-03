@@ -132,29 +132,19 @@ namespace HelloUWP.HelloUWP_XamlTypeInfo
 
         private void InitTypeTables()
         {
-            _typeNameTable = new string[10];
-            _typeNameTable[0] = "HelloUWP.MainPageData";
+            _typeNameTable = new string[5];
+            _typeNameTable[0] = "HelloUWP.WeatherModel";
             _typeNameTable[1] = "Object";
-            _typeNameTable[2] = "String";
-            _typeNameTable[3] = "System.Collections.ObjectModel.ObservableCollection`1<HelloUWP.WeatherModel>";
-            _typeNameTable[4] = "System.Collections.ObjectModel.Collection`1<HelloUWP.WeatherModel>";
-            _typeNameTable[5] = "HelloUWP.WeatherModel";
-            _typeNameTable[6] = "Int32";
-            _typeNameTable[7] = "HelloUWP.MainPage";
-            _typeNameTable[8] = "Windows.UI.Xaml.Controls.Page";
-            _typeNameTable[9] = "Windows.UI.Xaml.Controls.UserControl";
+            _typeNameTable[2] = "HelloUWP.MainPage";
+            _typeNameTable[3] = "Windows.UI.Xaml.Controls.Page";
+            _typeNameTable[4] = "Windows.UI.Xaml.Controls.UserControl";
 
-            _typeTable = new global::System.Type[10];
-            _typeTable[0] = typeof(global::HelloUWP.MainPageData);
+            _typeTable = new global::System.Type[5];
+            _typeTable[0] = typeof(global::HelloUWP.WeatherModel);
             _typeTable[1] = typeof(global::System.Object);
-            _typeTable[2] = typeof(global::System.String);
-            _typeTable[3] = typeof(global::System.Collections.ObjectModel.ObservableCollection<global::HelloUWP.WeatherModel>);
-            _typeTable[4] = typeof(global::System.Collections.ObjectModel.Collection<global::HelloUWP.WeatherModel>);
-            _typeTable[5] = typeof(global::HelloUWP.WeatherModel);
-            _typeTable[6] = typeof(global::System.Int32);
-            _typeTable[7] = typeof(global::HelloUWP.MainPage);
-            _typeTable[8] = typeof(global::Windows.UI.Xaml.Controls.Page);
-            _typeTable[9] = typeof(global::Windows.UI.Xaml.Controls.UserControl);
+            _typeTable[2] = typeof(global::HelloUWP.MainPage);
+            _typeTable[3] = typeof(global::Windows.UI.Xaml.Controls.Page);
+            _typeTable[4] = typeof(global::Windows.UI.Xaml.Controls.UserControl);
         }
 
         private int LookupTypeIndexByName(string typeName)
@@ -189,23 +179,8 @@ namespace HelloUWP.HelloUWP_XamlTypeInfo
             return -1;
         }
 
-        private object Activate_0_MainPageData() { return new global::HelloUWP.MainPageData(); }
-        private object Activate_3_ObservableCollection() { return new global::System.Collections.ObjectModel.ObservableCollection<global::HelloUWP.WeatherModel>(); }
-        private object Activate_4_Collection() { return new global::System.Collections.ObjectModel.Collection<global::HelloUWP.WeatherModel>(); }
-        private object Activate_5_WeatherModel() { return new global::HelloUWP.WeatherModel(); }
-        private object Activate_7_MainPage() { return new global::HelloUWP.MainPage(); }
-        private void VectorAdd_3_ObservableCollection(object instance, object item)
-        {
-            var collection = (global::System.Collections.Generic.ICollection<global::HelloUWP.WeatherModel>)instance;
-            var newItem = (global::HelloUWP.WeatherModel)item;
-            collection.Add(newItem);
-        }
-        private void VectorAdd_4_Collection(object instance, object item)
-        {
-            var collection = (global::System.Collections.Generic.ICollection<global::HelloUWP.WeatherModel>)instance;
-            var newItem = (global::HelloUWP.WeatherModel)item;
-            collection.Add(newItem);
-        }
+        private object Activate_0_WeatherModel() { return new global::HelloUWP.WeatherModel(); }
+        private object Activate_2_MainPage() { return new global::HelloUWP.MainPage(); }
 
         private global::Windows.UI.Xaml.Markup.IXamlType CreateXamlType(int typeIndex)
         {
@@ -217,11 +192,9 @@ namespace HelloUWP.HelloUWP_XamlTypeInfo
             switch (typeIndex)
             {
 
-            case 0:   //  HelloUWP.MainPageData
+            case 0:   //  HelloUWP.WeatherModel
                 userType = new global::HelloUWP.HelloUWP_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
-                userType.Activator = Activate_0_MainPageData;
-                userType.AddMemberName("Greeting");
-                userType.AddMemberName("CurrentWeather");
+                userType.Activator = Activate_0_WeatherModel;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
@@ -230,49 +203,18 @@ namespace HelloUWP.HelloUWP_XamlTypeInfo
                 xamlType = new global::HelloUWP.HelloUWP_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 2:   //  String
-                xamlType = new global::HelloUWP.HelloUWP_XamlTypeInfo.XamlSystemBaseType(typeName, type);
-                break;
-
-            case 3:   //  System.Collections.ObjectModel.ObservableCollection`1<HelloUWP.WeatherModel>
-                userType = new global::HelloUWP.HelloUWP_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Collections.ObjectModel.Collection`1<HelloUWP.WeatherModel>"));
-                userType.CollectionAdd = VectorAdd_3_ObservableCollection;
-                userType.SetIsReturnTypeStub();
-                xamlType = userType;
-                break;
-
-            case 4:   //  System.Collections.ObjectModel.Collection`1<HelloUWP.WeatherModel>
-                userType = new global::HelloUWP.HelloUWP_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
-                userType.Activator = Activate_4_Collection;
-                userType.CollectionAdd = VectorAdd_4_Collection;
-                xamlType = userType;
-                break;
-
-            case 5:   //  HelloUWP.WeatherModel
-                userType = new global::HelloUWP.HelloUWP_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
-                userType.Activator = Activate_5_WeatherModel;
-                userType.AddMemberName("Name");
-                userType.AddMemberName("Temperature");
-                userType.SetIsLocalType();
-                xamlType = userType;
-                break;
-
-            case 6:   //  Int32
-                xamlType = new global::HelloUWP.HelloUWP_XamlTypeInfo.XamlSystemBaseType(typeName, type);
-                break;
-
-            case 7:   //  HelloUWP.MainPage
+            case 2:   //  HelloUWP.MainPage
                 userType = new global::HelloUWP.HelloUWP_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_7_MainPage;
+                userType.Activator = Activate_2_MainPage;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 8:   //  Windows.UI.Xaml.Controls.Page
+            case 3:   //  Windows.UI.Xaml.Controls.Page
                 xamlType = new global::HelloUWP.HelloUWP_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 9:   //  Windows.UI.Xaml.Controls.UserControl
+            case 4:   //  Windows.UI.Xaml.Controls.UserControl
                 xamlType = new global::HelloUWP.HelloUWP_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
             }
@@ -280,79 +222,11 @@ namespace HelloUWP.HelloUWP_XamlTypeInfo
         }
 
 
-        private object get_0_MainPageData_Greeting(object instance)
-        {
-            var that = (global::HelloUWP.MainPageData)instance;
-            return that.Greeting;
-        }
-        private void set_0_MainPageData_Greeting(object instance, object Value)
-        {
-            var that = (global::HelloUWP.MainPageData)instance;
-            that.Greeting = (global::System.String)Value;
-        }
-        private object get_1_MainPageData_CurrentWeather(object instance)
-        {
-            var that = (global::HelloUWP.MainPageData)instance;
-            return that.CurrentWeather;
-        }
-        private void set_1_MainPageData_CurrentWeather(object instance, object Value)
-        {
-            var that = (global::HelloUWP.MainPageData)instance;
-            that.CurrentWeather = (global::System.Collections.ObjectModel.ObservableCollection<global::HelloUWP.WeatherModel>)Value;
-        }
-        private object get_2_WeatherModel_Name(object instance)
-        {
-            var that = (global::HelloUWP.WeatherModel)instance;
-            return that.Name;
-        }
-        private void set_2_WeatherModel_Name(object instance, object Value)
-        {
-            var that = (global::HelloUWP.WeatherModel)instance;
-            that.Name = (global::System.String)Value;
-        }
-        private object get_3_WeatherModel_Temperature(object instance)
-        {
-            var that = (global::HelloUWP.WeatherModel)instance;
-            return that.Temperature;
-        }
-        private void set_3_WeatherModel_Temperature(object instance, object Value)
-        {
-            var that = (global::HelloUWP.WeatherModel)instance;
-            that.Temperature = (global::System.Int32)Value;
-        }
 
         private global::Windows.UI.Xaml.Markup.IXamlMember CreateXamlMember(string longMemberName)
         {
             global::HelloUWP.HelloUWP_XamlTypeInfo.XamlMember xamlMember = null;
-            global::HelloUWP.HelloUWP_XamlTypeInfo.XamlUserType userType;
-
-            switch (longMemberName)
-            {
-            case "HelloUWP.MainPageData.Greeting":
-                userType = (global::HelloUWP.HelloUWP_XamlTypeInfo.XamlUserType)GetXamlTypeByName("HelloUWP.MainPageData");
-                xamlMember = new global::HelloUWP.HelloUWP_XamlTypeInfo.XamlMember(this, "Greeting", "String");
-                xamlMember.Getter = get_0_MainPageData_Greeting;
-                xamlMember.Setter = set_0_MainPageData_Greeting;
-                break;
-            case "HelloUWP.MainPageData.CurrentWeather":
-                userType = (global::HelloUWP.HelloUWP_XamlTypeInfo.XamlUserType)GetXamlTypeByName("HelloUWP.MainPageData");
-                xamlMember = new global::HelloUWP.HelloUWP_XamlTypeInfo.XamlMember(this, "CurrentWeather", "System.Collections.ObjectModel.ObservableCollection`1<HelloUWP.WeatherModel>");
-                xamlMember.Getter = get_1_MainPageData_CurrentWeather;
-                xamlMember.Setter = set_1_MainPageData_CurrentWeather;
-                break;
-            case "HelloUWP.WeatherModel.Name":
-                userType = (global::HelloUWP.HelloUWP_XamlTypeInfo.XamlUserType)GetXamlTypeByName("HelloUWP.WeatherModel");
-                xamlMember = new global::HelloUWP.HelloUWP_XamlTypeInfo.XamlMember(this, "Name", "String");
-                xamlMember.Getter = get_2_WeatherModel_Name;
-                xamlMember.Setter = set_2_WeatherModel_Name;
-                break;
-            case "HelloUWP.WeatherModel.Temperature":
-                userType = (global::HelloUWP.HelloUWP_XamlTypeInfo.XamlUserType)GetXamlTypeByName("HelloUWP.WeatherModel");
-                xamlMember = new global::HelloUWP.HelloUWP_XamlTypeInfo.XamlMember(this, "Temperature", "Int32");
-                xamlMember.Getter = get_3_WeatherModel_Temperature;
-                xamlMember.Setter = set_3_WeatherModel_Temperature;
-                break;
-            }
+            // No Local Properties
             return xamlMember;
         }
     }

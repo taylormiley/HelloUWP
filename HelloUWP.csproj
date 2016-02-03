@@ -103,8 +103,6 @@
     </Compile>
     <Compile Include="WeatherModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="MainPageData.cs" />
-    <Compile Include="WeatherRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">

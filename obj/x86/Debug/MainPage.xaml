@@ -31,7 +31,7 @@
         </DataTemplate>
     </Page.Resources>
     <Page.DataContext>
-        <local:MainPageData/>
+        <local:WeatherModel/>
     </Page.DataContext>
 
     <Grid Background="Black">
@@ -44,9 +44,9 @@
                 <RowDefinition Height="50"/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
-            <TextBox x:ConnectionId='1' x:Name="textBox" TextWrapping="Wrap" d:LayoutOverrides="Width" Margin="10,20,10,10" PlaceholderText="Search for names" Text="{Binding Filter, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <Button x:ConnectionId='1' Grid.Row="0" Content="Get Weather"                      HorizontalAlignment="Center" />
             <StackPanel Grid.Row="1" HorizontalAlignment="Center">
-                <TextBlock x:ConnectionId='2' x:Name="textBlock" TextWrapping="Wrap" Text="{Binding CurrentWeather[0].Temperature}"/>
+                <TextBlock x:ConnectionId='2' x:Name="ResultTextBlock" Text="{Binding CurrentWeather[0].Temperature}"/>
             </StackPanel>
         </Grid>
     </Grid>
