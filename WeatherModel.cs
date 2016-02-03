@@ -17,7 +17,7 @@ namespace HelloUWP
         {
 
             var http = new HttpClient();
-            var response = await http.GetAsync("http://api.openweathermap.org/data/2.5/weather?lat=32.77&lon=-96.79&appid=5e662da7c96732e96d9a40fd99685210");
+            var response = await http.GetAsync("http://api.openweathermap.org/data/2.5/weather?lat=" + lat + "&lon=" + lon + "&units=imperial&appid=5e662da7c96732e96d9a40fd99685210");
             var result = await response.Content.ReadAsStringAsync();
             var serializer = new DataContractJsonSerializer(typeof(RootObject));
 

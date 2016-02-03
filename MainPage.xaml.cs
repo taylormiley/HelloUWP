@@ -29,9 +29,11 @@ namespace HelloUWP
 
         private async void Button_Click(object sender, RoutedEventArgs e)
         {
-            WeatherModel.RootObject myWeather = await WeatherModel.GetWeather(20.0, 20.0);
+            var position = await LocationManager.GetPosition();
 
-            ResultTextBlock.Text = myWeather.name + " - " + myWeather.main.temp + " - " + myWeather.weather[0].description;
+            WeatherModel.RootObject myWeather = await WeatherModel.GetWeather(position.Coordinate.Latitude, position.Coordinate.Longitude);
+
+            ResultTextBlock.Text = myWeather.name + " - " + ((int)myWeather.main.temp).ToString() + " - " + myWeather.weather[0].description + " - " + myWeather.coord.lat + ", " + myWeather.coord.lon;
         }
     }
 }
